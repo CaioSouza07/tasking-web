@@ -1,6 +1,7 @@
 // import { useState } from 'react'
 import Logo from "./assets/logo.png";
 import Background from "./components/Background.jsx";
+import HighlightButton from "./components/HighlightButton.jsx";
 import TopicItem from "./components/TopicItem.jsx";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           Organize e gerencie suas tarefas de forma eficiente
         </h3>
         <TopicItem benefits={benefits} />
+        <HighlightButton>Começar agora!</HighlightButton>
       </div>
     </Background>
   );
