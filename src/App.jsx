@@ -31,7 +31,9 @@ function App() {
           Organize e gerencie suas tarefas de forma eficiente
         </h3>
         <TopicItem benefits={benefits} />
-        <HighlightButton>Começar agora!</HighlightButton>
+        <div className="p-6">
+          <HighlightButton>Começar agora!</HighlightButton>
+        </div>
       </div>
     </Background>
   );
