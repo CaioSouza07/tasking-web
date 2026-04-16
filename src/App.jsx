@@ -22,17 +22,19 @@ function App() {
 
   return (
     <Background>
-      <img src={Logo} alt="Logo da Tasking" className="w-70 h-auto" />
-      <div className="space-y-4">
-        <h1 className="text-white text-5xl font-bold font-poppins">
-          Seja bem-vindo ao Tasking!
-        </h1>
-        <h3 className="text-white text-lg opacity-80">
-          Organize e gerencie suas tarefas de forma eficiente
-        </h3>
-        <TopicItem benefits={benefits} />
-        <div className="p-6">
-          <HighlightButton>Começar agora!</HighlightButton>
+      <div className="pt-6 pl-20 flex flex-col gap-8">
+        <img src={Logo} alt="Logo da Tasking" className="w-70 h-auto" />
+        <div className="space-y-4">
+          <h1 className="text-5xl font-bold font-poppins">
+            Seja bem-vindo ao Tasking!
+          </h1>
+          <h3 className="text-lg opacity-80">
+            Organize e gerencie suas tarefas de forma eficiente
+          </h3>
+          <TopicItem benefits={benefits} />
+          <div className="p-6">
+            <HighlightButton>Começar agora!</HighlightButton>
+          </div>
         </div>
       </div>
     </Background>
