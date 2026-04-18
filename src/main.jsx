@@ -3,16 +3,17 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router";
+import TasksPage from "./pages/TasksPage.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
   },
-  // {
-  //   path: "/task",
-  //   element: <TasksPage />,
-  // },
+  {
+    path: "/task",
+    element: <TasksPage />,
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(
