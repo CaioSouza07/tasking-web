@@ -1,19 +1,13 @@
 import { CircleCheck } from "lucide-react";
 
-function TopicItem({ benefits }) {
+function TopicItem({ title, description }) {
   return (
-    <div className="mt-10 space-y-8">
-      {benefits.map((benefit) => {
-        return (
-          <div className="flex flex-row gap-4 items-start">
-            <CircleCheck className="text-2xl mt-0.5 h-7 w-7" />
-            <div className="flex flex-col">
-              <h3 className="text-2xl font-semibold">{benefit.title}</h3>
-              <p className="opacity-80 text-lg">{benefit.description}</p>
-            </div>
-          </div>
-        );
-      })}
+    <div className="flex flex-row gap-4 items-start">
+      <CircleCheck className="text-2xl mt-0.5 h-7 w-7" />
+      <div className="flex flex-col">
+        <h3 className="text-2xl font-semibold">{title}</h3>
+        <p className="opacity-80 text-lg">{description}</p>
+      </div>
     </div>
   );
 }
