@@ -9,23 +9,30 @@ import TaskCard from "./TaskCard";
 import EmptyDropZone from "./EmptyDropZone";
 
 function Step({ step, index }) {
-  const { attributes, listeners, setNodeRef, transform, transition } =
-    useSortable({
-      id: step.id,
-      data: {
-        type: "STEP",
-        index,
-      },
-    });
-  const style = {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    isDragging,
+    transform,
     transition,
-    transform: CSS.Transform.toString(transform),
-  };
+  } = useSortable({
+    id: step.id,
+    data: {
+      type: "STEP",
+      index,
+      step,
+    },
+  });
   return (
     <div
       ref={setNodeRef}
-      style={style}
-      className="bg-[#003566]/50 backdrop-blur-md border border-white/20 shadow-lg rounded-xl w-62 flex flex-col"
+      style={{
+        transform: CSS.Transform.toString(transform),
+        transition: transition,
+        opacity: isDragging ? 0 : 1,
+      }}
+      className="bg-[#003566]/50 backdrop-blur-md border border-white/20 shadow-lg rounded-xl w-62 flex flex-col h-fit"
     >
       <div
         {...attributes}

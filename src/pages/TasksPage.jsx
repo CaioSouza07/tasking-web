@@ -8,6 +8,7 @@ import {
   SortableContext,
 } from "@dnd-kit/sortable";
 import { useState } from "react";
+import TaskCard from "../components/TaskCard";
 
 function TasksPage() {
   const {
@@ -20,6 +21,7 @@ function TasksPage() {
     removeStep,
   } = useStep();
   const [activeTask, setActiveTask] = useState(null);
+  const [activeStep, setActiveStep] = useState(null);
 
   const customCollisionDetection = (args) => {
     const { active, droppableContainers } = args;
@@ -51,10 +53,14 @@ function TasksPage() {
     if (active.data.current?.type === "TASK") {
       setActiveTask(active.data.current);
     }
+    if (active.data.current?.type === "STEP") {
+      setActiveStep(active.data.current);
+    }
   };
 
   const handleDragEnd = (event) => {
     setActiveTask(null);
+    setActiveStep(null);
     const { active, over } = event;
 
     if (!over || active.id === over.id) return;
@@ -82,7 +88,7 @@ function TasksPage() {
     <Background>
       <div className="flex flex-col">
         <Header />
-        <div className="flex flex-row flex-1 max-h-full">
+        <div className="flex flex-row flex-1 max-h-full p-4 gap-4">
           <DndContext
             onDragStart={handleDragStart}
             onDragEnd={handleDragEnd}
@@ -99,9 +105,9 @@ function TasksPage() {
             </SortableContext>
             <DragOverlay>
               {activeTask ? (
-                <div className="bg-white rounded-lg border-l-6 border-[#F1B81F] text-black p-2 font-medium shadow-xl opacity-95 cursor-grabbing">
-                  <p>{activeTask.title}</p>
-                </div>
+                <TaskCard task={activeTask.task} />
+              ) : activeStep ? (
+                <Step step={activeStep.step} />
               ) : null}
             </DragOverlay>
           </DndContext>
