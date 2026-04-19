@@ -4,28 +4,17 @@ import { v4 as uuidv4 } from "uuid";
 function useStep() {
   const staticSteps = [
     {
-      id: 1,
+      id: "step-1",
       title: "Pendente",
       tasks: [
-        {
-          id: 1,
-          title: "Estudar Java",
-        },
-        {
-          id: 2,
-          title: "Estudar React",
-        },
+        { id: "task-1", title: "Estudar Java" },
+        { id: "task-2", title: "Estudar React" },
       ],
     },
     {
-      id: 2,
+      id: "step-2",
       title: "Concluída",
-      tasks: [
-        {
-          id: 3,
-          title: "Comer",
-        },
-      ],
+      tasks: [{ id: "task-3", title: "Comer" }],
     },
   ];
 
@@ -107,16 +96,31 @@ function useStep() {
 
   const moveTask = (fromStepId, toStepId, fromIndex, toIndex) => {
     setSteps((prev) => {
-      const newSteps = [...prev];
+      return prev.map((step) => {
+        if (step.id === fromStepId && step.id === toStepId) {
+          const tasks = [...step.tasks];
+          const [moved] = tasks.splice(fromIndex, 1);
+          tasks.splice(toIndex, 0, moved);
+          return { ...step, tasks };
+        }
 
-      const fromStep = newSteps.find((s) => s.id === fromStepId);
-      const toStep = newSteps.find((s) => s.id === toStepId);
+        if (step.id === fromStepId) {
+          const tasks = [...step.tasks];
+          tasks.splice(fromIndex, 1);
+          return { ...step, tasks };
+        }
 
-      const [movedTask] = fromStep.tasks.splice(fromIndex, 1);
+        if (step.id === toStepId) {
+          const tasks = [...step.tasks];
+          const movedTask = prev.find((s) => s.id === fromStepId).tasks[
+            fromIndex
+          ];
+          tasks.splice(toIndex, 0, movedTask);
+          return { ...step, tasks };
+        }
 
-      toStep.tasks.splice(toIndex, 0, movedTask);
-
-      return newSteps;
+        return step;
+      });
     });
   };
 
