@@ -7,8 +7,9 @@ import { CSS } from "@dnd-kit/utilities";
 import { Ellipsis } from "lucide-react";
 import TaskCard from "./TaskCard";
 import EmptyDropZone from "./EmptyDropZone";
+import AddTaskButton from "./AddTaskButton";
 
-function Step({ step, index }) {
+function Step({ step, index, addTask }) {
   const {
     attributes,
     listeners,
@@ -62,6 +63,7 @@ function Step({ step, index }) {
           )}
         </SortableContext>
       </div>
+      <AddTaskButton stepId={step.id} onClick={addTask} />
     </div>
   );
 }

@@ -100,7 +100,12 @@ function TasksPage() {
               strategy={horizontalListSortingStrategy}
             >
               {steps.map((step, index) => (
-                <Step key={step.id} step={step} index={index} />
+                <Step
+                  key={step.id}
+                  step={step}
+                  index={index}
+                  addTask={addTask}
+                />
               ))}
             </SortableContext>
             <DragOverlay>
