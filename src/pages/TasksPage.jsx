@@ -87,28 +87,30 @@ function TasksPage() {
 
   return (
     <Background>
-      <div className="flex flex-col">
+      <div className="flex flex-col  flex-1 min-h-0">
         <Header />
-        <div className="flex flex-row flex-1 max-h-full p-4 gap-4">
+        <div className="flex flex-row flex-1 min-h-0 p-4 gap-4 overflow-x-auto">
           <DndContext
             onDragStart={handleDragStart}
             onDragEnd={handleDragEnd}
             collisionDetection={customCollisionDetection}
           >
-            <SortableContext
-              id="steps"
-              items={steps.map((step) => step.id)}
-              strategy={horizontalListSortingStrategy}
-            >
-              {steps.map((step, index) => (
-                <Step
-                  key={step.id}
-                  step={step}
-                  index={index}
-                  addTask={addTask}
-                />
-              ))}
-            </SortableContext>
+            <div className="flex flex-row gap-4">
+              <SortableContext
+                id="steps"
+                items={steps.map((step) => step.id)}
+                strategy={horizontalListSortingStrategy}
+              >
+                {steps.map((step, index) => (
+                  <Step
+                    key={step.id}
+                    step={step}
+                    index={index}
+                    addTask={addTask}
+                  />
+                ))}
+              </SortableContext>
+            </div>
             <DragOverlay>
               {activeTask ? (
                 <TaskCard task={activeTask.task} />

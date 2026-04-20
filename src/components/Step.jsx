@@ -33,7 +33,7 @@ function Step({ step, index, addTask }) {
         transition: transition,
         opacity: isDragging ? 0 : 1,
       }}
-      className="bg-[#003566]/50 backdrop-blur-md border border-white/20 shadow-lg rounded-xl w-62 flex flex-col h-fit"
+      className="bg-[#003566]/50  backdrop-blur-md border border-white/20 shadow-lg rounded-xl w-62 flex flex-col h-fit shrink-0"
     >
       <div
         {...attributes}
