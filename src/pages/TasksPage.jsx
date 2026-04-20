@@ -3,6 +3,7 @@ import Background from "../components/Background";
 import Header from "../components/Header";
 import useStep from "../hooks/useStep";
 import Step from "../components/Step";
+import AddStepButton from "../components/AddStepButton";
 import {
   horizontalListSortingStrategy,
   SortableContext,
@@ -116,6 +117,7 @@ function TasksPage() {
               ) : null}
             </DragOverlay>
           </DndContext>
+          <AddStepButton onClick={addStep} />
         </div>
       </div>
     </Background>

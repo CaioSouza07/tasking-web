@@ -38,9 +38,9 @@ function Step({ step, index, addTask }) {
       <div
         {...attributes}
         {...listeners}
-        className="text-xl font-poppins font-medium flex justify-between p-2 border-b border-white/20"
+        className="text-xl font-poppins font-medium flex justify-between p-2 border-b border-white/20 w-full min-w-0"
       >
-        <p>{step.title}</p>
+        <p className="w-full truncate">{step.title}</p>
         <Ellipsis size={28} />
       </div>
       <div className="flex flex-col justify-center p-2 gap-2">
@@ -63,7 +63,9 @@ function Step({ step, index, addTask }) {
           )}
         </SortableContext>
       </div>
-      <AddTaskButton stepId={step.id} onClick={addTask} />
+      <div className="p-2 flex">
+        <AddTaskButton stepId={step.id} onClick={addTask} />
+      </div>
     </div>
   );
 }

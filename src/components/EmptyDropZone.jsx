@@ -10,7 +10,13 @@ function EmptyDropZone({ stepId }) {
     },
   });
 
-  return <div ref={setNodeRef} className="min-h-12" />;
+  return (
+    <div
+      ref={setNodeRef}
+      className="min-h-2"
+      // className="min-h-10 border-dashed border-white/30 border-2 rounded-lg"
+    />
+  );
 }
 
 export default EmptyDropZone;

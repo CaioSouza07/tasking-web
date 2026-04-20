@@ -28,7 +28,7 @@ function TaskCard({ task, stepId, index }) {
         transition: transition,
         opacity: isDragging ? 0 : 1,
       }}
-      className="bg-white rounded-lg border-l-6 border-[#F1B81F] text-black p-2 font-medium"
+      className="bg-white rounded-lg border-l-6 border-[#F1B81F] text-black p-2 font-medium cursor-pointer"
     >
       <p>{task.title}</p>
     </div>
