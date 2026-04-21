@@ -127,7 +127,9 @@ function TasksPage() {
           <AddStepButton onClick={addStep} />
         </div>
       </div>
-      {isOpen && <TaskModal taskData={dataModal} />}
+      {isOpen && (
+        <TaskModal taskData={dataModal} close={close} removeTask={removeTask} />
+      )}
     </Background>
   );
 }

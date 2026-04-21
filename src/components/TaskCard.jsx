@@ -28,7 +28,7 @@ function TaskCard({ task, stepId, index, openModal }) {
         transition: transition,
         opacity: isDragging ? 0 : 1,
       }}
-      onClick={() => openModal(task)}
+      onClick={() => openModal({ ...task, stepId })}
       className="bg-white rounded-lg border-l-6 border-[#F1B81F] text-black p-2 font-medium cursor-pointer flex justify-between"
     >
       <p className="wrap-break-word">{task.title}</p>

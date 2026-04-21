@@ -59,6 +59,7 @@ function useStep() {
     const newTask = {
       id: uuidv4(),
       title,
+      description: "",
     };
 
     setSteps((prev) =>
