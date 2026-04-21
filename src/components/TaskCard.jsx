@@ -30,7 +30,7 @@ function TaskCard({ task, stepId, index }) {
       }}
       className="bg-white rounded-lg border-l-6 border-[#F1B81F] text-black p-2 font-medium cursor-pointer"
     >
-      <p>{task.title}</p>
+      <p className="wrap-break-word">{task.title}</p>
     </div>
   );
 }

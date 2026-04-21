@@ -1,24 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 function useStep() {
-  const staticSteps = [
-    {
-      id: "step-1",
-      title: "Pendente",
-      tasks: [
-        { id: "task-1", title: "Estudar Java" },
-        { id: "task-2", title: "Estudar React" },
-      ],
-    },
-    {
-      id: "step-2",
-      title: "Concluída",
-      tasks: [{ id: "task-3", title: "Comer" }],
-    },
-  ];
+  // const staticSteps = [
+  //   {
+  //     id: "step-1",
+  //     title: "Pendente",
+  //     tasks: [
+  //       { id: "task-1", title: "Estudar Java" },
+  //       { id: "task-2", title: "Estudar React" },
+  //     ],
+  //   },
+  //   {
+  //     id: "step-2",
+  //     title: "Concluída",
+  //     tasks: [{ id: "task-3", title: "Comer" }],
+  //   },
+  // ];
 
-  const [steps, setSteps] = useState(staticSteps);
+  const [steps, setSteps] = useState(
+    JSON.parse(localStorage.getItem("steps")) || [],
+  );
+
+  useEffect(() => {
+    localStorage.setItem("steps", JSON.stringify(steps));
+  }, [steps]);
 
   const addStep = (title) => {
     if (!title.trim()) return;

@@ -21,7 +21,7 @@ function AddTaskButton({ onClick, stepId }) {
           onChange={(e) => setInput(e.target.value)}
         />
       </div>
-      <div className="flex m-2 gap-2">
+      <div className="flex mt-2 gap-2">
         <button
           onClick={handleSubmit}
           className="bg-radial from-[#FFD72C] to-[#F1B81F] text-black font-medium p-2 pt-1 pb-1 text-lg rounded-lg shadow hover:opacity-62"
