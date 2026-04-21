@@ -10,6 +10,8 @@ import {
 } from "@dnd-kit/sortable";
 import { useState } from "react";
 import TaskCard from "../components/TaskCard";
+import useModal from "../hooks/useModal";
+import TaskModal from "../components/TaskModal";
 
 function TasksPage() {
   const {
@@ -21,6 +23,7 @@ function TasksPage() {
     moveStep,
     removeStep,
   } = useStep();
+  const { open, close, isOpen, dataModal } = useModal();
   const [activeTask, setActiveTask] = useState(null);
   const [activeStep, setActiveStep] = useState(null);
 
@@ -103,6 +106,8 @@ function TasksPage() {
               >
                 {steps.map((step, index) => (
                   <Step
+                    dataModal={dataModal}
+                    openModal={open}
                     key={step.id}
                     step={step}
                     index={index}
@@ -122,6 +127,7 @@ function TasksPage() {
           <AddStepButton onClick={addStep} />
         </div>
       </div>
+      {isOpen && <TaskModal taskData={dataModal} />}
     </Background>
   );
 }

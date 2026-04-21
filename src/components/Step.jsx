@@ -9,7 +9,7 @@ import TaskCard from "./TaskCard";
 import EmptyDropZone from "./EmptyDropZone";
 import AddTaskButton from "./AddTaskButton";
 
-function Step({ step, index, addTask }) {
+function Step({ step, index, addTask, openModal }) {
   const {
     attributes,
     listeners,
@@ -33,7 +33,7 @@ function Step({ step, index, addTask }) {
         transition: transition,
         opacity: isDragging ? 0 : 1,
       }}
-      className="bg-[#003566]/50  backdrop-blur-md border border-white/20 shadow-lg rounded-xl w-62 flex flex-col h-fit shrink-0"
+      className="bg-[#003566]/50  backdrop-blur-md border border-white/20 shadow-lg rounded-xl w-64 flex flex-col h-fit shrink-0"
     >
       <div
         {...attributes}
@@ -54,6 +54,7 @@ function Step({ step, index, addTask }) {
           ) : (
             step.tasks.map((task, index) => (
               <TaskCard
+                openModal={openModal}
                 key={task.id}
                 task={task}
                 index={index}
