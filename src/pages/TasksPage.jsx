@@ -113,6 +113,7 @@ function TasksPage() {
                     step={step}
                     index={index}
                     addTask={addTask}
+                    removeStep={removeStep}
                   />
                 ))}
               </SortableContext>
