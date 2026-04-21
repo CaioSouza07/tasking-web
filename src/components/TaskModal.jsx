@@ -1,6 +1,16 @@
 import { TextAlignStart, Trash2, X } from "lucide-react";
+import { useState } from "react";
 
-function TaskModal({ taskData, close, removeTask }) {
+function TaskModal({ taskData, close, removeTask, updateTask }) {
+  const [inputTitle, setInputTitle] = useState(taskData.title);
+  const [inputDescription, setInputDescription] = useState(
+    taskData.description,
+  );
+  const handleSubmit = () => {
+    if (!inputTitle.trim() || !inputDescription.trim()) return;
+    updateTask(taskData.stepId, taskData.id, inputTitle, inputDescription);
+    close();
+  };
   const handleRemoveTask = () => {
     removeTask(taskData.stepId, taskData.id);
     close();
@@ -28,9 +38,10 @@ function TaskModal({ taskData, close, removeTask }) {
         <div className="flex p-4 flex-col gap-4">
           <input
             type="text"
-            value={taskData.title}
+            value={inputTitle}
             className="text-2xl font-poppins font-medium w-full"
             placeholder="Digite um título..."
+            onChange={(e) => setInputTitle(e.target.value)}
           />
           <div className="flex gap-2 font-medium text-lg">
             <TextAlignStart />
@@ -40,12 +51,16 @@ function TaskModal({ taskData, close, removeTask }) {
             <textarea
               placeholder="Digite a descrição..."
               className="w-full h-32 resize-none overflow-y-auto"
-              value={taskData.description}
+              value={inputDescription}
+              onChange={(e) => setInputDescription(e.target.value)}
             ></textarea>
           </div>
         </div>
         <div className="flex justify-end p-4">
-          <button className="bg-radial from-[#FFD72C] to-[#F1B81F] text-black p-1 pl-2 pr-2 font-semibold text-lg rounded-lg items-center shadow hover:opacity-72 flex h-fit">
+          <button
+            onClick={handleSubmit}
+            className="bg-radial from-[#FFD72C] to-[#F1B81F] text-black p-1 pl-2 pr-2 font-semibold text-lg rounded-lg items-center shadow hover:opacity-72 flex h-fit"
+          >
             Salvar
           </button>
         </div>

@@ -21,6 +21,7 @@ function TasksPage() {
     removeTask,
     moveTask,
     moveStep,
+    updateTask,
     removeStep,
   } = useStep();
   const { open, close, isOpen, dataModal } = useModal();
@@ -128,7 +129,12 @@ function TasksPage() {
         </div>
       </div>
       {isOpen && (
-        <TaskModal taskData={dataModal} close={close} removeTask={removeTask} />
+        <TaskModal
+          taskData={dataModal}
+          close={close}
+          removeTask={removeTask}
+          updateTask={updateTask}
+        />
       )}
     </Background>
   );

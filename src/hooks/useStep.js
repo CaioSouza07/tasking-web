@@ -84,8 +84,8 @@ function useStep() {
     );
   };
 
-  const updateTaskTitle = (stepId, taskId, newTitle) => {
-    if (!newTitle.trim()) return;
+  const updateTask = (stepId, taskId, newTitle, newDescription) => {
+    if (!newTitle.trim() || !newDescription.trim()) return;
 
     setSteps((prev) =>
       prev.map((step) =>
@@ -93,7 +93,9 @@ function useStep() {
           ? {
               ...step,
               tasks: step.tasks.map((task) =>
-                task.id === taskId ? { ...task, title: newTitle } : task,
+                task.id === taskId
+                  ? { ...task, title: newTitle, description: newDescription }
+                  : task,
               ),
             }
           : step,
@@ -148,7 +150,7 @@ function useStep() {
     updateStepTitle,
     addTask,
     removeTask,
-    updateTaskTitle,
+    updateTask,
     moveTask,
     moveStep,
   };
