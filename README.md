@@ -1,16 +1,91 @@
-# React + Vite
+# Tasking
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Gerenciador de tarefas estilo Kanban, inspirado no Trello, focado em organização e produtividade.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Descrição
 
-## React Compiler
+O Tasking é uma aplicação web desenvolvida para ajudar usuários a organizarem suas tarefas de forma visual, simples e eficiente.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Com uma abordagem baseada em quadros Kanban, o sistema permite gerenciar atividades, acompanhar progresso e manter controle sobre rotinas mais complexas.
 
-## Expanding the ESLint configuration
+**Problema que resolve:**
+Falta de organização e dificuldade em gerenciar tarefas do dia a dia.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Tecnologias
+
+- React JS
+- Tailwind CSS
+- Vite
+- Node.js
+- Local Storage (armazenamento no navegador)
+- dnd-kit (drag and drop)
+- Lucide Icons
+
+---
+
+## Protótipo no Figma
+
+- [Link do Figma](https://www.figma.com/design/E1w31EQBResXm21Pwt11h6/Tasking?node-id=0-1&t=0BC26a898JeoPAcY-1)
+
+---
+
+## Funcionalidades
+
+- Criar etapas (colunas)
+- Criar tarefas dentro das etapas
+- Adicionar descrição às tarefas
+- Excluir tarefas
+- Drag and Drop entre etapas
+- Persistência de dados com Local Storage
+
+---
+
+## Estrutura do projeto
+
+```bash
+src/
+ ├── assets/
+ ├── components/
+ ├── hooks/
+ ├── pages/
+ ├── App.jsx
+ ├── main.jsx
+ └── index.css
+```
+
+---
+
+## Como executar o projeto
+
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/tasking.git
+
+# Acesse a pasta
+cd tasking
+
+# Instale as dependências
+npm install
+
+# Rode o projeto
+npm run dev
+```
+
+O projeto estará disponível em:
+👉 http://localhost:5173
+
+---
+
+## Aprendizados
+
+Durante o desenvolvimento deste projeto, foram trabalhados conceitos importantes como:
+
+- Organização de componentes em React
+- Criação de hooks customizados
+- Manipulação de estado
+- Implementação de drag and drop
+- Persistência de dados no navegador
