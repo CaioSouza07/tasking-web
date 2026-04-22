@@ -51,7 +51,7 @@ src/
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/tasking.git
+git clone https://github.com/CaioSouza07/tasking-web.git
 
 # Acesse a pasta
 cd tasking
