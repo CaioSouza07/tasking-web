@@ -2,8 +2,6 @@
 
 Gerenciador de tarefas estilo Kanban, inspirado no Trello, focado em organização e produtividade.
 
----
-
 ## Descrição
 
 O Tasking é uma aplicação web desenvolvida para ajudar usuários a organizarem suas tarefas de forma visual, simples e eficiente.
@@ -12,8 +10,6 @@ Com uma abordagem baseada em quadros Kanban, o sistema permite gerenciar ativida
 
 **Problema que resolve:**
 Falta de organização e dificuldade em gerenciar tarefas do dia a dia.
-
----
 
 ## Tecnologias
 
@@ -25,13 +21,9 @@ Falta de organização e dificuldade em gerenciar tarefas do dia a dia.
 - dnd-kit (drag and drop)
 - Lucide Icons
 
----
-
 ## Protótipo no Figma
 
 - [Link do Figma](https://www.figma.com/design/E1w31EQBResXm21Pwt11h6/Tasking?node-id=0-1&t=0BC26a898JeoPAcY-1)
-
----
 
 ## Funcionalidades
 
@@ -41,8 +33,6 @@ Falta de organização e dificuldade em gerenciar tarefas do dia a dia.
 - Excluir tarefas
 - Drag and Drop entre etapas
 - Persistência de dados com Local Storage
-
----
 
 ## Estrutura do projeto
 
@@ -56,8 +46,6 @@ src/
  ├── main.jsx
  └── index.css
 ```
-
----
 
 ## Como executar o projeto
 
@@ -77,8 +65,6 @@ npm run dev
 
 O projeto estará disponível em:
 👉 http://localhost:5173
-
----
 
 ## Aprendizados
 
