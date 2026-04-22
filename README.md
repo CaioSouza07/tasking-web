@@ -54,7 +54,7 @@ src/
 git clone https://github.com/CaioSouza07/tasking-web.git
 
 # Acesse a pasta
-cd tasking
+cd tasking-web
 
 # Instale as dependências
 npm install
