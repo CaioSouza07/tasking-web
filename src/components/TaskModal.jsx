@@ -7,7 +7,7 @@ function TaskModal({ taskData, close, removeTask, updateTask }) {
     taskData.description,
   );
   const handleSubmit = () => {
-    if (!inputTitle.trim() || !inputDescription.trim()) return;
+    if (!inputTitle.trim()) return;
     updateTask(taskData.stepId, taskData.id, inputTitle, inputDescription);
     close();
   };

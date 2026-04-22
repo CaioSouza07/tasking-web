@@ -85,7 +85,7 @@ function useStep() {
   };
 
   const updateTask = (stepId, taskId, newTitle, newDescription) => {
-    if (!newTitle.trim() || !newDescription.trim()) return;
+    if (!newTitle.trim()) return;
 
     setSteps((prev) =>
       prev.map((step) =>
