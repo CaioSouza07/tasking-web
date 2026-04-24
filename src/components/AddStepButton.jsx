@@ -11,6 +11,7 @@ function AddStepButton({ onClick }) {
     setActive(false);
   };
   return active ? (
+    <form action="">
     <div className="bg-[#003566]/50 backdrop-blur-md border border-white/20 shadow-lg rounded-xl w-62 flex flex-col h-fit shrink-0">
       <div className="text-xl font-poppins font-medium flex justify-between p-2 border-b border-white/20 w-full">
         <input
@@ -34,11 +35,13 @@ function AddStepButton({ onClick }) {
             setActive(false);
           }}
           className="hover:bg-white/20 rounded-lg"
+          type="submit"
         >
           <X size={26} />
         </button>
       </div>
     </div>
+    </form>
   ) : (
     <button
       onClick={() => setActive(true)}

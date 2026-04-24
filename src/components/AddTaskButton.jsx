@@ -12,6 +12,7 @@ function AddTaskButton({ onClick, stepId }) {
   };
   return active ? (
     <div>
+      <form action="">
       <div className="bg-white rounded-lg border-l-6 border-[#F1B81F] text-black p-2 font-medium w-full">
         <input
           className="focus:outline-0 w-full"
@@ -34,10 +35,12 @@ function AddTaskButton({ onClick, stepId }) {
             setActive(false);
           }}
           className="hover:bg-white/20 rounded-lg"
+          type="submit"
         >
           <X size={26} />
         </button>
       </div>
+      </form>
     </div>
   ) : (
     <button
